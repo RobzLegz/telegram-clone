@@ -1,12 +1,27 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import "./Sidebar.css";
 import SearchIcon from '@material-ui/icons/Search';
 import BorderColorOutlinedIcon from '@material-ui/icons/BorderColorOutlined';
 import { Avatar, IconButton } from '@material-ui/core';
 import SidebarThread from './SidebarThread';
 import { PhoneOutlined, QuestionAnswer, Settings } from '@material-ui/icons';
+import db, {auth} from "../firebase";
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
+import { useState } from "react";
 
 function Sidebar() {
+
+    const user = useSelector(selectUser);
+    const [threads, setThreads] = useState([]);
+
+    useEffect(() => {
+        db.collection("threads").onSnapshot((snapshot) => setThreads(snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+        }))))
+    }, []);
+
     return (
         <div className="sidebar">
             <div className="sidebar-header">
@@ -22,7 +37,7 @@ function Sidebar() {
                 <SidebarThread />
             </div>
             <div className="sidebar-bottom">
-                <Avatar className="sidebar-bottom-avatar" />
+                <Avatar onClick={() => auth.signOut()} className="sidebar-bottom-avatar" />
                 <IconButton>
                     <PhoneOutlined />
                 </IconButton>
