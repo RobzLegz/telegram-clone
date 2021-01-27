@@ -1,12 +1,15 @@
 import { Avatar, IconButton } from '@material-ui/core';
 import { MoreHoriz } from '@material-ui/icons';
-import React from 'react';
+import React, {useState} from 'react';
 import "./Chat.css";
 
 const Chat = () => {
 
+    const [input, setInput] = useState("");
+
     const sendMessage = e => {
         e.preventDefault();
+        setInput("");
     }
 
     return (
@@ -26,7 +29,7 @@ const Chat = () => {
             <div className="chat-container">
                 <div className="message-inputs">
                     <form>
-                        <input type="text" placeholder="Write a message"/>
+                        <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Write a message"/>
                         <button onClick={sendMessage} className="send-message">Sendmessage</button>
                     </form>
                 </div>
