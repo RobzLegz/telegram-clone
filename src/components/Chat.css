@@ -1,0 +1,31 @@
+.chat {
+  display: flex;
+  flex: 0.75;
+  flex-direction: column;
+  height: 100vh;
+}
+.chat-header {
+  display: flex;
+  border-bottom: 1px solid rgba(190, 190, 190, 0.1);
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  height: 50px;
+}
+.chat-header-contents {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  color: #fff;
+  padding: 10px;
+}
+.contents-info > h5 {
+  font-weight: 500;
+  color: gray;
+}
+.header-details {
+  color: #fff;
+}
+.header-details:hover {
+  color: rgba(1, 150, 199, 0.8);
+}
