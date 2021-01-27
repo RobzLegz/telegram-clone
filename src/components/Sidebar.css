@@ -3,5 +3,32 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  border-right: 1px solid rgb(190, 190, 190, 0.1);
+  border-right: 1px solid rgba(190, 190, 190, 0.1);
+  background-color: #233a61;
+}
+.sidebar-header {
+  display: flex;
+  height: 50px;
+  padding: 10px;
+  align-items: center;
+}
+.sidebar-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background-color: #2d4671;
+  color: #fff;
+  border-radius: 5px;
+  padding: 2px;
+}
+.search-input {
+  border: none;
+  background-color: transparent;
+  outline-width: 0;
+  color: #fff;
+  flex: 1;
+}
+#sidebar-button {
+  color: #fff !important;
 }
