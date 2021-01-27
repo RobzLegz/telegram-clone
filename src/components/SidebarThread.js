@@ -4,11 +4,13 @@ import "./SidebarThread.css";
 
 const SidebarThreads = () => {
     return (
-        <div className="sidebarThread">
+        <div className="sidebar-thread">
             <Avatar />
-            <h3>ThreadName</h3>
-            <p>Message info</p>
-            <small>timestamp</small>
+            <div className="thread-detail">
+                <h3>ThreadName</h3>
+                <p>Message info</p>
+                <small className="thread-timestamp">timestamp</small>
+            </div>
         </div>
     )
 }

@@ -32,3 +32,26 @@
 #sidebar-button {
   color: #fff !important;
 }
+.sidebar-threads {
+  flex: 1;
+  overflow-y: scroll;
+}
+.sidebar-threads::-webkit-scrollbar {
+  display: none;
+}
+.sidebar-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 20px;
+  border-top: 1px solid rgba(190, 190, 190, 0.1);
+}
+.sidebar-bottom-avatar:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.sidebar-bottom > button {
+  color: #fff;
+}
+.sidebar-bottom > button:hover {
+  color: rgba(2, 150, 199, 0.9);
+}
